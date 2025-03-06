@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="etusivu.css" />
+    <title>Etusivu</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pokedex</h1>
+      <div class="generations">
+        <% generations.forEach(function(gen) { %>
+        <a href="/sukupolvi/<%= gen %>" class="gen-button"
+          >Sukupolvi <%= gen %></a
+        >
+        <% }); %>
+      </div>
+    </div>
+    <footer>
+      <h2>Valitsethan sukupolven..</h2>
+    </footer>
+  </body>
+</html>

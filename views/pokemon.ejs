@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/pokemon.css" />
+    <title>Pokemon</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Takaisin Pokedex etusivulle</a>
+    </nav>
+
+    <div class="sisalto">
+      <h1><%= pokemon.name.toUpperCase() %></h1>
+      <img
+        src="<%= pokemon.sprites.front_default %>"
+        alt="<%= pokemon.name %>"
+      />
+      
+        <h2><strong>Tyypit:</strong></h2>
+        <li>
+        <% pokemon.types.forEach(type => { %>
+        <span><%= type.type.name %></span>
+        <% }) %>
+      </li>
+          <h2>Statsit:</h2>
+          <div class="stats-box">
+            <ul>
+              <% pokemon.stats.forEach(stat => { %>
+              <li><strong>
+                <% if (stat.stat.name === 'hp') { %> Hp:
+                <% } else if (stat.stat.name === 'attack') { %> Attack:
+                <% } else if (stat.stat.name === 'defense') { %> Defense:
+                <% } else if (stat.stat.name === 'special-attack') { %> Special attack:
+                <% } else if (stat.stat.name === 'special-defense') { %> Special defense:
+                <% } else if (stat.stat.name === 'speed') { %> Speed:
+                <% } %>
+              </strong> <%= stat.base_stat %>
+              </li>
+              <% }) %>
+            </ul>
+          </div>
+  </body>
+</html>

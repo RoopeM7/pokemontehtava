@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/sukupolvi.css" />
+    <title>Sukupolvisivu</title>
+    <nav>
+      <a href="/">Takaisin Pokedex etusivulle</a>
+    </nav>
+  </head>
+  <body>
+    <div class="sisältö">
+      <% if (pokemonList && pokemonList.length) { %>
+      <div class="pokemon-list">
+        <% pokemonList.forEach(pokemon => { %>
+        <div>
+          <a href="<%= pokemon.url %>"><%= pokemon.name %></a>
+        </div>
+        <% }); %>
+      </div>
+      <% } else { %>
+      <p>Ei löydy Pokemoneja tässä generaatiosta.</p>
+      <% } %>
+    </div>
+  </body>
+</html>
