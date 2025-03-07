@@ -24,6 +24,10 @@ h1 {
   color: #fafaf8;
 }
 
+p {
+  color: #fafaf8;
+}
+
 .generations {
   display: flex;
   flex-wrap: wrap;
