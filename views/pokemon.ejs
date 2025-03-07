@@ -7,10 +7,7 @@
     <title>Pokemon</title>
   </head>
   <body>
-    <nav>
-      <a href="/">Takaisin Pokedex etusivulle</a>
-    </nav>
-
+    <%- include('osasivupohjat/header', { header: "nav" }); %>
     <div class="sisalto">
       <h1><%= pokemon.name.toUpperCase() %></h1>
       <img
@@ -41,5 +38,6 @@
               <% }) %>
             </ul>
           </div>
+          <%- include('osasivupohjat/footer', {footer: "ROOPE" }); %>
   </body>
 </html>

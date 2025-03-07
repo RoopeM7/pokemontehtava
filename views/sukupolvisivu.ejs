@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/sukupolvi.css" />
     <title>Sukupolvisivu</title>
-    <nav>
-      <a href="/">Takaisin Pokedex etusivulle</a>
-    </nav>
   </head>
   <body>
+    <%- include('osasivupohjat/header', { title: "Etusivu" }); %>
     <div class="sisältö">
       <% if (pokemonList && pokemonList.length) { %>
       <div class="pokemon-list">
@@ -23,5 +21,6 @@
       <p>Ei löydy Pokemoneja tässä generaatiosta.</p>
       <% } %>
     </div>
+    <%- include('osasivupohjat/footer', {footer: "ROOPE" }); %>
   </body>
 </html>
