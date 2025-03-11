@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/sukupolvi.css" />
-    <title>Sukupolvisivu</title>
-  </head>
-  <body>
-    <%- include('osasivupohjat/header', { title: "Etusivu" }); %>
+<%- include('osasivupohjat/header', { cssTiedosto: 'sukupolvi.css', sivunOtsikko: 'Sukupolvisivu' }) %>
     <div class="sisältö">
       <% if (pokemonList && pokemonList.length) { %>
       <div class="pokemon-list">
@@ -21,6 +12,6 @@
       <p>Ei löydy Pokemoneja tässä generaatiosta.</p>
       <% } %>
     </div>
-    <%- include('osasivupohjat/footer', {footer: "ROOPE" }); %>
+    <%- include('osasivupohjat/footer', {footerinnimi: 'ROOPE', footerinteksti: 'Valitse!!' }); %>
   </body>
 </html>

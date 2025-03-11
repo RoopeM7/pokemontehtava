@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="etusivu.css" />
-    <title>Etusivu</title>
-  </head>
-  <body>
-    <%- include('osasivupohjat/header', {header: "nav" }); %>
+<%- include('osasivupohjat/header', { cssTiedosto: 'etusivu.css', sivunOtsikko: 'Etusivu' }) %>
     <div class="container">
       <h1>Pokedex</h1>
 
@@ -26,10 +17,7 @@
         <% }); %>
       </div>
     </div>
-    <%- include('osasivupohjat/footer', {footer: "ROOPE" }); %>
-    <footer>
-      <h2>Valitsethan sukupolven..</h2>
-    </footer>
+    <%- include('osasivupohjat/footer', {footerinnimi: 'ROOPE', footerinteksti: 'Valitsethan sukupolven!!' }); %>
     <script>
       async function etsiPokemon(event) {
         event.preventDefault();

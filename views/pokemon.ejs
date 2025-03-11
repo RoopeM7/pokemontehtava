@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/pokemon.css" />
-    <title>Pokemon</title>
-  </head>
-  <body>
-    <%- include('osasivupohjat/header', { header: "nav" }); %>
+<%- include('osasivupohjat/header', { cssTiedosto: 'pokemon.css', sivunOtsikko: 'pokemonsivu' }) %>
     <div class="sisalto">
       <h1><%= pokemon.name.toUpperCase() %></h1>
       <img
@@ -38,6 +29,6 @@
               <% }) %>
             </ul>
           </div>
-          <%- include('osasivupohjat/footer', {footer: "ROOPE" }); %>
+          <%- include('osasivupohjat/footer', {footerinnimi: 'ROOPE', footerinteksti: 'TÄSSÄ TIEDOT!!' }); %>
   </body>
 </html>
