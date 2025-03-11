@@ -62,6 +62,31 @@ app.get("/pokemon/:nimi", async (req, res) => {
   }
 });
 
+// Pokekomin hakutoiminto kohta ALKAA!!!
+app.get("/pokemon", async (req, res) => {
+  const { nimi } = req.query;
+
+  if (!nimi) {
+    return res
+      .status(400)
+      .render("virhesivu", { message: "Anna Pokemonin nimi!" });
+  }
+
+  const apiUrl = `https://pokeapi.co/api/v2/pokemon/${nimi.toLowerCase()}/`;
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error("Pokemonia ei löytynyt!");
+
+    const pokemonData = await response.json();
+    res.redirect(`/pokemon/${pokemonData.name}`);
+  } catch (error) {
+    res.status(404).render("virhesivu", {
+      message: `Pokemon '${nimi}' ei löytynyt. VALITETTAVASTI!`,
+    });
+  }
+}); //pokemonin hakutoimintokohta LOPPUU!!!
+
 app.listen(port, host, () => {
   console.log(` http://localhost:${port} kuunteleee.......`);
 });

@@ -1,37 +1,13 @@
 <%- include('osasivupohjat/header', { cssTiedosto: 'etusivu.css', sivunOtsikko: 'Etusivu' }) %>
     <div class="container">
       <h1>Pokedex</h1>
-
-      <div class="hakukenttä">
-        <p>Voit hakea pokemonin, Kokeile vaikka bulbasaur</p>
-        <form onsubmit="etsiPokemon(event)">
-          <input type="text" id="searchInput" placeholder="etsiPokemon..." />
-          <button type="submit">Etsi pokemon</button>
-        </form>
-      </div>
       <div class="generations">
         <% generations.forEach(function(gen) { %>
         <a href="/sukupolvi/<%= gen %>" class="gen-button"
-          >Sukupolvi <%= gen %></a
-        >
+          >Sukupolvi <%= gen %></a>
         <% }); %>
       </div>
     </div>
     <%- include('osasivupohjat/footer', {footerinnimi: 'ROOPE', footerinteksti: 'Valitsethan sukupolven!!' }); %>
-    <script>
-      async function etsiPokemon(event) {
-        event.preventDefault();
-
-        let query = document.getElementById("searchInput").value.toLowerCase();
-        let apiUrl = `https://pokeapi.co/api/v2/pokemon/${query}`;
-        try {
-          let response = await fetch(apiUrl);
-          if (!response.ok) throw new Error("POKEMONIA EI LÖYDY!");
-          window.location.href = `/pokemon/${query}`;
-        } catch (error) {
-          alert("POKEMONIA EI LÖYDY KOKEILE TOISTA NIMEÄ UUDESTAAN.");
-        }
-      }
-    </script>
   </body>
 </html>

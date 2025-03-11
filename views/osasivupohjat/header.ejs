@@ -9,5 +9,10 @@
     </nav>
     <title><%= sivunOtsikko %></title>
   </head>
-  <body></body>
+  <body>
+    <form action="/pokemon" method="GET">
+      <input type="text" name="nimi" placeholder="Etsi Pokemon..." required />
+      <button type="submit">Etsi Pokemon, kokeile vaikka bulbasaur</button>
+    </form>
+  </body>
 </html>
